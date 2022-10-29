@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const locationRoutes = require('./routes/location')
-
+const weatherRoutes = require('./routes/weather')
 
 const app = express()
 
@@ -12,6 +12,7 @@ app.use((req, res, next) => {
 
 // routes
 app.use('/api/location', locationRoutes)
+app.use('/api/weather', weatherRoutes)
 
 
 app.listen(process.env.PORT, () => {
