@@ -21,7 +21,7 @@ router.get('/:city', async (req, res) => {
     let cityName = resData.data[0].display_name
     let latitude = resData.data[0].lat
     let longitude = resData.data[0].lon
-    res.send({city: cityName, lat: latitude, lon: longitude})
+    res.send({cityName: cityName, latitude: latitude, longitude: longitude})
   } catch (err) {
     res.json({error: err.message})
   }
