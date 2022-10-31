@@ -1,6 +1,7 @@
 const express = require('express')
 require('dotenv').config()
 const axios = require('axios')
+const { json } = require('body-parser')
 
 const router = express.Router()
 
@@ -14,10 +15,16 @@ const router = express.Router()
 // api.openweathermap.org/data/2.5/forecast?lat=41.8755616&lon=-87.6244212&appid={my_key}
 
 router.get('/coordinates/:lat/:lon', async (req, res) => {
-  let baseUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${req.params.lat}&lon=${req.params.lon}&appid=${process.env.WEATHER_KEY}`
+  let baseUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${req.params.lat}&lon=${req.params.lon}&units=imperial&appid=${process.env.WEATHER_KEY}`
   try{
+    // resData is an obj 
+
+    // body parser stuff? 
+
     let resData = await axios.get(baseUrl)
-    res.send({data: resData.data})
+    // console.log('resData.data.list: ', resData.data.list)
+    // strData = JSON.stringify(resData)
+    res.send({'list': resData.data.list})
   } catch (err) {
     res.json({error: err.message, url: baseUrl})
   }
