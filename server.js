@@ -7,7 +7,7 @@ const weatherRoutes = require('./routes/weather')
 
 const app = express()
 
-const allowedOrigins = ['http://localhost:4000'];
+const allowedOrigins = ['http://localhost:4000', 'http://localhost:3000'];
 
 const options = {
   origin: allowedOrigins

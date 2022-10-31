@@ -18,10 +18,19 @@ router.get('/:city', async (req, res) => {
   base_url = `https://us1.locationiq.com/v1/search?key=${process.env.LOCATION_TOKEN}&q=${req.params.city}&format=json`
   try{
     let resData = await axios.get(base_url)
-    let cityName = resData.data[0].display_name
-    let latitude = resData.data[0].lat
-    let longitude = resData.data[0].lon
-    res.send({cityName: cityName, latitude: latitude, longitude: longitude})
+    let resultArr = []
+    resData.data.map((item) => {
+      newArr = []
+      newArr.push(item.display_name)
+      newArr.push(item.lat)
+      newArr.push(item.lon)
+      resultArr.push(newArr)
+    })
+    // let cityName = resData.data[0].display_name
+    // let latitude = resData.data[0].lat
+    // let longitude = resData.data[0].lon
+    // res.send({cityName: cityName, latitude: latitude, longitude: longitude})
+    res.send(resultArr)
   } catch (err) {
     res.json({error: err.message})
   }
