@@ -17,7 +17,6 @@ const router = express.Router()
 router.get('/:city', async (req, res) => {
   base_url = `https://us1.locationiq.com/v1/search?key=${process.env.LOCATION_TOKEN}&q=${req.params.city}&format=json`
   console.log('base_url: ', base_url)
-  // try{
 
   try {
     let resData = await axios.get(base_url)
@@ -31,16 +30,8 @@ router.get('/:city', async (req, res) => {
     })
     res.send(resultArr)
   } catch (err) {
-   console.log('err: ', err.code)
-   res.send({'err': err.code})
+   res.send({'error': err.code})
   }
-    
-  
-  // } catch (err) {
-  //   console.log('err.code: ', err.code)
-  //   console.log('err: ', err)
-  //   res.json({error: err})
-  // }
 })
 
 

@@ -4,6 +4,8 @@ const cors = require('cors')
 const bodyParser = require("body-parser")
 const locationRoutes = require('./routes/location')
 const weatherRoutes = require('./routes/weather')
+const userRoutes = require('./routes/user')
+const mongoose = require('mongoose')
 
 const app = express()
 
@@ -27,10 +29,16 @@ app.use(bodyParser.urlencoded({
 }));
 
 // routes
+app.use('/api/user', userRoutes)
 app.use('/api/location', locationRoutes)
 app.use('/api/weather', weatherRoutes)
 
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(`listening on port ${process.env.PORT}`)
+    })
+  }).catch((error) =>{
+    console.log(error)
+  })
 
-app.listen(process.env.PORT, () => {
-  console.log(`listening on port ${process.env.PORT}`)
-})

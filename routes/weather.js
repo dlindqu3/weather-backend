@@ -17,14 +17,8 @@ const router = express.Router()
 router.get('/coordinates/:lat/:lon', async (req, res) => {
   let baseUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${req.params.lat}&lon=${req.params.lon}&units=imperial&appid=${process.env.WEATHER_KEY}`
   try{
-    // resData is an obj 
-
-    // body parser stuff? 
 
     let resData = await axios.get(baseUrl)
-    // console.log('resData.data.list: ', resData.data.list)
-    // strData = JSON.stringify(resData)
-    // console.log(resData.data)
     res.send({'list': resData.data.list})
   } catch (err) {
     res.json({error: err.message, url: baseUrl})
