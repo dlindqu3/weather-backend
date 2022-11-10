@@ -6,6 +6,12 @@
 - provides 3 hour forecast over 5 days 
 
 
+## deployment 
+- I deployed on "Render", which provides free cloud hosting 
+- However, since I chose the free deployment tier, the web server not continue running after 15 minutes of inactivity 
+- If it has been inactive for 15 minutes or so, it might take 20-30 seconds to reboot
+
+
 ## citations 
 1. The Net Ninja, "MERN Authentication Tutorial #2 - User Routes, Controller & Model", [link](https://www.youtube.com/watch?v=b5LDOW8WJ9A&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=2)
 2. The Net Ninja, "MERN Authentication Tutorial #3 - Signing Up & Hashing Passwords", [link](https://www.youtube.com/watch?v=mjZIv4ey0ps&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=3)
