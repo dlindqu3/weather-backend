@@ -30,6 +30,9 @@ app.use(bodyParser.urlencoded({
 }));
 
 // routes
+app.get('/', (req, res) =>{
+  res.json({mssg: 'welcome to the site'})
+})
 app.use('/api/user', userRoutes)
 app.use('/api/location', locationRoutes)
 app.use('/api/weather', weatherRoutes)
