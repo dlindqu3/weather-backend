@@ -16,7 +16,7 @@ const router = express.Router()
 // get responses for a given city (might return multiple)
 router.get('/:city', async (req, res) => { 
   let base_url = `https://us1.locationiq.com/v1/search?key=${process.env.LOCATION_TOKEN}&q=${req.params.city}&format=json`
-  console.log('base_url: ', base_url)
+  // console.log('base_url: ', base_url)
 
   try {
     let resData = await axios.get(base_url)

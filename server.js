@@ -19,10 +19,10 @@ const options = {
 
 app.use(cors(options));
 
-app.use((req, res, next) => {
-  console.log(req.method, req.path)
-  next()
-})
+// app.use((req, res, next) => {
+   // console.log(req.method, req.path)
+//   next()
+// })
 
 
 app.use(bodyParser.json());
