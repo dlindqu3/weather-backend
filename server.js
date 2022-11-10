@@ -4,6 +4,7 @@ const cors = require('cors')
 const bodyParser = require("body-parser")
 const locationRoutes = require('./routes/location')
 const weatherRoutes = require('./routes/weather')
+const precipitationMapRoutes = require('./routes/precipitationMap')
 const userRoutes = require('./routes/user')
 const mongoose = require('mongoose')
 
@@ -32,6 +33,7 @@ app.use(bodyParser.urlencoded({
 app.use('/api/user', userRoutes)
 app.use('/api/location', locationRoutes)
 app.use('/api/weather', weatherRoutes)
+app.use('/api/precipitation', precipitationMapRoutes)
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {

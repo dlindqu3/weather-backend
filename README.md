@@ -1,13 +1,10 @@
 ## LocationIQ API
-- use "search/forward geocoding" 
+- uses "search/forward geocoding" 
+
 
 ## weather API -- openWeather
-- 3 hour forecast over 5 days 
-- get weather data with location 
+- provides 3 hour forecast over 5 days 
 
-# next steps: 
-- auth 
-- userQueries model, link to user model 
 
 ## citations 
 1. The Net Ninja, "MERN Authentication Tutorial #2 - User Routes, Controller & Model", [link](https://www.youtube.com/watch?v=b5LDOW8WJ9A&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&index=2)
