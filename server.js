@@ -10,10 +10,11 @@ const mongoose = require('mongoose')
 
 const app = express()
 
-const allowedOrigins = ['http://localhost:4000', 'http://localhost:3000', "https://celera-weather.vercel.app/"];
+const allowedOrigins = ['http://localhost:4000', 'http://localhost:3000', "https://celera-weather.vercel.app"];
 
 const options = {
-  origin: allowedOrigins
+  origin: allowedOrigins,
+  optionsSuccessStatus: 200
 };
 
 app.use(cors(options));
