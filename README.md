@@ -2,7 +2,7 @@
 - uses "search/forward geocoding" 
 
 
-## weather API -- openWeather
+## OpenWeather API 
 - provides 3 hour forecast over 5 days 
 
 

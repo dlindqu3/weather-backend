@@ -14,8 +14,8 @@ const router = express.Router()
 
 
 // get responses for a given city (might return multiple)
-router.get('/:city', async (req, res) => {
-  base_url = `https://us1.locationiq.com/v1/search?key=${process.env.LOCATION_TOKEN}&q=${req.params.city}&format=json`
+router.get('/:city', async (req, res) => { 
+  let base_url = `https://us1.locationiq.com/v1/search?key=${process.env.LOCATION_TOKEN}&q=${req.params.city}&format=json`
   console.log('base_url: ', base_url)
 
   try {
@@ -30,7 +30,7 @@ router.get('/:city', async (req, res) => {
     })
     res.send(resultArr)
   } catch (err) {
-   res.send({'error': err.code})
+   res.send({'error': err.code, 'route': base_url})
   }
 })
 
