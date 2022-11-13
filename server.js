@@ -8,6 +8,7 @@ const precipitationMapRoutes = require('./routes/precipitationMap')
 const userRoutes = require('./routes/user')
 const mongoose = require('mongoose')
 
+
 const app = express()
 
 const allowedOrigins = ['http://localhost:4000', 'http://localhost:3000', "https://celera-weather.vercel.app"];
